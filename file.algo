@@ -1,0 +1,32 @@
+ALGORITHM CompterPhrase
+VAR
+    c : CHAR
+    compteur_caracteres, compteur_mots, compteur_voyelles : ENTIER
+BEGIN
+
+    compteur_caracteres <- 0
+    compteur_mots <- 1        
+    compteur_voyelles <- 0
+
+    Lire(c)
+
+    WHILE c <> '.' DO
+        compteur_caracteres <- compteur_caracteres + 1
+
+        IF c = ' ' THEN
+            compteur_mots <- compteur_mots + 1
+        END_IF
+
+        IF c IN ['a','e','i','o','u','A','E','I','O','U'] THEN
+            compteur_voyelles <- compteur_voyelles + 1
+        END_IF
+
+        Lire(c)
+    END_WHILE
+
+    compteur_caracteres <- compteur_caracteres + 1
+
+    Ecrire("Nombre de caractères : ", compteur_caracteres)
+    Ecrire("Nombre de mots : ", compteur_mots)
+    Ecrire("Nombre de voyelles : ", compteur_voyelles)
+END
